@@ -9,14 +9,12 @@ import formSchema from './Validation/Schema'
 const initialFormValues = {
   name:"",
   size:"",
-  toppings: {
-    pepperoni:false,
-    onions:false,
-    chicken:false,
-    peppers:false,
-    pineapple:false,
-    extraCheese:false
-  },
+  pepperoni:false,
+  onions:false,
+  chicken:false,
+  peppers:false,
+  pineapple:false,
+  extraCheese:false,
   instructions:"",
 }
 
@@ -72,14 +70,11 @@ const App = () => {
 
   const onCheckboxChange = (evt) => {
     const {name,checked} = evt.target
-
     setFormValues({
-      ...formValues,
-      toppings: {
-        ...formValues.toppings,
+        ...formValues,
         [name]: checked
-      }
     })
+    console.log("formvalues", formValues)
   }
 
   const onSubmit = (evt) => {
@@ -88,7 +83,12 @@ const App = () => {
     const newOrder = {
       name:formValues.name,
       size:formValues.size,
-      toppings:Object.keys(formValues.toppings).filter((toppingChoice) => formValues.toppings[toppingChoice] === true),
+      pepperoni:formValues.pepperoni,
+      onions:formValues.onions,
+      chicken:formValues.chicken,
+      peppers:formValues.peppers,
+      pineapple:formValues.pineapple,
+      extraCheese:formValues.extraCheese,
       instructions:formValues.instructions
     }
     postNewOrder(newOrder)
@@ -117,7 +117,6 @@ const App = () => {
         onCheckboxChange={onCheckboxChange}
         onSubmit={onSubmit}
         errors={formErrors}/>
-      <pre>{JSON.stringify(orders)}</pre>
       </Route>
     </div>
   );

@@ -39,7 +39,7 @@ export default function Form(props) {
                     name="pepperoni"
                     type="checkbox"
                     onChange={onCheckboxChange}
-                    checked={values.toppings.pepperoni}
+                    checked={values.pepperoni}
                     />
                 </label>
                 <label  htmlFor="toppings">
@@ -48,7 +48,7 @@ export default function Form(props) {
                     name="onions"
                     type="checkbox"
                     onChange={onCheckboxChange}
-                    checked={values.toppings.onions}
+                    checked={values.onions}
                     />
                  </label>
                  <label  htmlFor="toppings">
@@ -57,7 +57,7 @@ export default function Form(props) {
                     name="chicken"
                     type="checkbox"
                     onChange={onCheckboxChange}
-                    checked={values.toppings.chicken}
+                    checked={values.chicken}
                     />
                  </label>
                  <label  htmlFor="toppings">
@@ -66,7 +66,7 @@ export default function Form(props) {
                     name="peppers"
                     type="checkbox"
                     onChange={onCheckboxChange}
-                    checked={values.toppings.peppers}
+                    checked={values.peppers}
                     />
                  </label>
                  <label  htmlFor="toppings">
@@ -75,7 +75,7 @@ export default function Form(props) {
                     name="pineapple"
                     type="checkbox"
                     onChange={onCheckboxChange}
-                    checked={values.toppings.pineapple}
+                    checked={values.pineapple}
                     />
                  </label>
                  <label htmlFor="toppings">
@@ -84,12 +84,13 @@ export default function Form(props) {
                     name="extraCheese"
                     type="checkbox"
                     onChange={onCheckboxChange}
-                    checked={values.toppings.extraCheese}
+                    checked={values.extraCheese}
                     />
                  </label>
-                 <label htmlFor="instructions" id="special-text">
+                 <label htmlFor="instructions" >
                      Special instructions?
                      <textarea
+                     id="special-text"
                      name="instructions" 
                      value={values.instructions} 
                      onChange={onInputChange} 
